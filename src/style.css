@@ -34,7 +34,7 @@ input:focus, select:focus { outline: 1px solid var(--accent); }
 .xform { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; }
 .xform .lbl { grid-column: 1 / -1; }
 
-#tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+#tabs { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 4px; } /* buttons share the width, whatever their number */
 #tabs button { padding: 6px 2px; font-size: 12px; }
 #tab-body { display: flex; flex-direction: column; gap: 12px; }
 .section { display: flex; flex-direction: column; gap: 8px; }

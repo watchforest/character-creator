@@ -301,21 +301,6 @@ function beard() {
 
 /* ---- more back ---- */
 
-function wings() {
-  const g = new THREE.Group();
-  const feathers = mat(0xf4f4f8, { name: 'Feathers', roughness: 0.9 }), tips = mat(0xc9d6ee, { name: 'Tips', roughness: 0.9 });
-  for (const s of [-1, 1]) {
-    const w = mesh(new THREE.SphereGeometry(0.1, 20, 12), feathers, s * 0.17, 0.08, 0);
-    w.scale.set(1.8, 1.4, 0.18);
-    w.rotation.z = s * 0.5;
-    const t = mesh(new THREE.SphereGeometry(0.08, 20, 12), tips, s * 0.26, 0.2, -0.004);
-    t.scale.set(1.4, 1.5, 0.16);
-    t.rotation.z = s * 0.7;
-    g.add(w, t);
-  }
-  return g;
-}
-
 function posterTube() {
   const g = new THREE.Group();
   const tube = mat(0x2f3b52, { name: 'Tube', roughness: 0.6 }), caps = mat(0xe0b030, { name: 'Caps', roughness: 0.5 });
@@ -397,7 +382,6 @@ export const BUILTIN_ITEMS = [
   { id: 'builtin:catears', name: 'Cat ears', category: 'Hats', bone: 'head', anchor: 'top', fit: { axis: 'xz', ref: 0.2 }, position: [0, 0, 0], rotation: [0, 0, 0], scale: 1, build: catEars },
   { id: 'builtin:goggles', name: 'Safety goggles', category: 'Face', bone: 'head', anchor: 'front', fit: { axis: 'xz', ref: 0.19 }, position: [0, 0.015, 0.012], rotation: [0, 0, 0], scale: 1, build: goggles },
   { id: 'builtin:beard', name: 'Beard', category: 'Face', bone: 'head', anchor: 'front', fit: { axis: 'xz', ref: 0.19 }, position: [0, -0.07, 0.0], rotation: [0, 0, 0], scale: 1, build: beard },
-  { id: 'builtin:wings', name: 'Wings', category: 'Back', bone: 'chest', anchor: 'back', position: [0, 0.05, -0.05], rotation: [0, 0, 0], scale: 1.6, build: wings },
   { id: 'builtin:postertube', name: 'Poster tube', category: 'Back', bone: 'chest', anchor: 'back', position: [0.06, 0, -0.06], rotation: [0, 0, 25], scale: 1, build: posterTube },
   { id: 'builtin:clipboard', name: 'Clipboard', category: 'Held', bone: 'handR', anchor: 'outer', position: [0, 0, 0], rotation: [90, 0, 0], scale: 1, build: clipboard },
   { id: 'builtin:laptop', name: 'Laptop', category: 'Held', bone: 'handR', anchor: 'outer', position: [0, 0, 0], rotation: [90, 0, 0], scale: 1, build: laptop },

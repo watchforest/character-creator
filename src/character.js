@@ -62,8 +62,10 @@ export async function loadModelUrl(url) {
  * know about it (bones, materials, parts) and the rest pose to export from.
  */
 export class Character {
-  constructor(gltf, name) {
+  /** `shareColour`: all flat (untextured) coloured materials become one, so the whole character has a single colour. */
+  constructor(gltf, name, { shareColour = false } = {}) {
     this.name = name;
+    this.shareColour = shareColour; // its mesh / material split is arbitrary, so neither is exposed (see main.js Parts)
     this.scene = gltf.scene;
     this.animations = gltf.animations || [];
     stripNonGeometry(this.scene);
@@ -95,6 +97,18 @@ export class Character {
       const split = (m) => (users.get(m) > 1 && !m.map ? Object.assign(m.clone(), { name: `${m.name || 'material'} · ${o.name || 'mesh'}` }) : m);
       o.material = Array.isArray(o.material) ? o.material.map(split) : split(o.material);
     });
+
+    if (shareColour) {
+      let shared = null;
+      const share = (m) => {
+        if (!m.color || m.map) return m;
+        shared ??= Object.assign(m, { name: 'Character' });
+        return shared;
+      };
+      this.scene.traverse((o) => {
+        if (o.isMesh) o.material = Array.isArray(o.material) ? o.material.map(share) : share(o.material);
+      });
+    }
 
     this.scene.traverse((o) => {
       if (o.isBone && !boneSet.has(o)) { boneSet.add(o); this.bones.push(o); }
@@ -214,7 +228,7 @@ export class Character {
       if (m.orig.roughness !== undefined) m.material.roughness = v.roughness ?? m.orig.roughness;
       if (m.orig.metalness !== undefined) m.material.metalness = v.metalness ?? m.orig.metalness;
     }
-    const hidden = new Set(look.hiddenParts);
+    const hidden = new Set(this.shareColour ? [] : look.hiddenParts);
     for (const { key, mesh } of this.meshes) mesh.visible = !hidden.has(key);
 
     this.scene.scale.copy(this.restRootScale).multiplyScalar(look.body.height || 1);

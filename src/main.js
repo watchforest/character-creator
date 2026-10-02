@@ -146,11 +146,11 @@ function setLook(next) {
 
 /* -------------------------------------------------------------- character */
 
-async function setCharacter(gltf, name) {
+async function setCharacter(gltf, name, options) {
   if (character) viewer.scene.remove(character.scene);
   if (skeletonHelper) { viewer.scene.remove(skeletonHelper); skeletonHelper = null; }
   tc.detach();
-  character = new Character(gltf, name);
+  character = new Character(gltf, name, options);
   if (!character.bones.length) toast('This model has no skeleton: it can be styled but not animated.', 'warn', 8000);
   viewer.scene.add(character.scene);
   viewer.fitStage(character.box);
@@ -319,7 +319,7 @@ function renderLookTab() {
   const mats = character.materialList.filter((m) => m.material.color);
   el.append(section('Colours', mats.length ? mats.map(materialRow) : h('p', { class: 'hint' }, 'No colourable materials.')));
 
-  if (character.meshes.length > 1) {
+  if (character.meshes.length > 1 && !character.shareColour) {
     el.append(section('Parts',
       h('p', { class: 'hint' }, 'Show or hide meshes of the template (hairstyles, clothes, ...).'),
       h('ul', { class: 'list' }, character.meshes.map(({ key }) => {
@@ -366,11 +366,11 @@ function renderAccessoriesTab() {
   const el = h('div', { class: 'section' });
   el.append(
     section('Catalog',
+      h('button', { onclick: () => $('#f-acc').click() }, 'Add your own .glb / .gltf…'),
+      h('p', { class: 'hint' }, 'Custom models last for this session only. Add permanent ones in public/assets/manifest.json.'),
       h('div', { class: 'chiprow' }, cats.map((c) => h('button', { class: `pill ${c === category ? 'active' : ''}`, onclick: () => { category = c; renderLeft(); } }, c))),
       h('div', { class: 'grid' }, items.map((item) => h('div', { class: 'card-item', title: item.builtin ? 'Placeholder accessory' : item.name, onclick: () => equip(item) },
-        thumbFor(item), h('span', {}, item.name)))),
-      h('button', { onclick: () => $('#f-acc').click() }, 'Add your own .glb / .gltf…'),
-      h('p', { class: 'hint' }, 'Custom models last for this session only. Add permanent ones in public/assets/manifest.json.')),
+        thumbFor(item), h('span', {}, item.name))))),
     section('Equipped',
       look.accessories.length ? h('ul', { class: 'list' }, look.accessories.map((a) => h('li', { class: `${a.uid === selectedUid ? 'sel' : ''} ${a.visible === false ? 'dim' : ''}`, onclick: () => select(a.uid) },
         h('span', { class: 'name' }, a.name, h('span', { class: 'sub' }, `  ${a.bone.replace(/^mixamorig[:_]?/i, '')}`)),
@@ -424,7 +424,7 @@ async function takeScreenshot() {
 }
 
 const TABS = [['look', 'Look'], ['acc', 'Accessories'], ['anim', 'Animate'], ['studio', 'Studio']]
-  .filter(([id]) => !(IS_PRODUCTION && id === 'anim')); // production has fixed animations: no panel
+  .filter(([id]) => !(IS_PRODUCTION && (id === 'anim' || id === 'studio'))); // production: fixed animations, no studio
 
 function renderLeft() {
   $('#tabs').replaceChildren(...TABS.map(([id, label]) =>
@@ -816,7 +816,8 @@ window.__cc = {
   let template = null;
   for (const url of IS_PRODUCTION ? [DEFAULT_CHARACTER_URL] : [...TEMPLATE_URLS, DEFAULT_CHARACTER_URL]) {
     try { template = await loadModelUrl(new URL(url, document.baseURI).href); } catch (err) { toast(`Could not load ${url}: ${err?.message || err}`, 'error', 10000); }
-    if (template) { await setCharacter(template, url.split('/').pop()); break; }
+    // The default character is one colour (its meshes are segmented inconsistently); your own template keeps its materials.
+    if (template) { await setCharacter(template, url.split('/').pop(), { shareColour: url === DEFAULT_CHARACTER_URL }); break; }
   }
   if (!template && IS_PRODUCTION) toast('The default character could not be loaded.', 'error', 20000);
   else if (!template) { $('#empty').hidden = false; renderAll(); }
