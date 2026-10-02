@@ -1,0 +1,2 @@
+[  115217ms] ReferenceError: crown is not defined
+    at http://localhost:5173/src/builtins.js?t=1790959396710:225:183

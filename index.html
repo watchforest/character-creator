@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Character Creator</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='9' r='5' fill='%23ff9f4a'/%3E%3Cpath d='M6 29c0-8 4-12 10-12s10 4 10 12z' fill='%23ff9f4a'/%3E%3C/svg%3E" />
+</head>
+<body>
+<div id="app">
+  <aside id="left">
+    <div class="brand"><h1>Character Creator</h1><span id="char-name" class="hint"></span></div>
+    <nav id="tabs"></nav>
+    <div id="tab-body"></div>
+    <p id="notice" class="notice"></p>
+  </aside>
+
+  <main id="viewport">
+    <canvas id="canvas"></canvas>
+    <div id="toolbar">
+      <button id="b-undo" title="Undo (Ctrl/Cmd+Z)">Undo</button>
+      <button id="b-redo" title="Redo (Shift+Ctrl/Cmd+Z)">Redo</button>
+      <span class="sep"></span>
+      <button id="b-random" title="Random colours, proportions and accessories">🎲 Randomize</button>
+      <button id="b-reset" title="Back to the unmodified template">Reset</button>
+      <span class="sep"></span>
+      <button id="b-full" title="Frame the whole character">Full</button>
+      <button id="b-face" title="Zoom to the head">Face</button>
+      <span class="sep"></span>
+      <button id="b-save" title="Download this look as a small .json file">Save look</button>
+      <button id="b-load" title="Load a look .json">Load look</button>
+    </div>
+    <div id="empty" hidden>
+      <div class="card">
+        <h2>Add your template character</h2>
+        <p>Put a rigged <code>.glb</code> (or <code>.gltf</code>) at <code>public/models/character.glb</code> and reload, or load one now:</p>
+        <div class="row">
+          <button id="e-choose" class="primary">Choose character .glb / .gltf…</button>
+          <button id="e-placeholder">Use placeholder</button>
+        </div>
+        <p class="hint">You can also drag &amp; drop a .glb or .gltf anywhere on this page. For a .gltf with separate .bin / texture files, select or drop them all together.</p>
+      </div>
+    </div>
+    <div id="transport">
+      <button id="t-play" title="Play / pause (Space)">▶</button>
+      <button id="t-stop" title="Stop and return to the rest pose">■</button>
+      <select id="t-clip" title="Animation"></select>
+      <input type="range" id="t-scrub" min="0" max="1" step="0.001" value="0" />
+      <span id="t-time">0.00 / 0.00</span>
+      <label class="check" title="Playback speed">×<select id="t-speed">
+        <option>0.25</option><option>0.5</option><option selected>1</option><option>1.5</option><option>2</option></select></label>
+      <label class="check"><input type="checkbox" id="t-loop" checked /> Loop</label>
+    </div>
+    <div id="dropzone">Drop .glb / .gltf / .fbx files: a character, animations or accessories</div>
+    <div id="toasts"></div>
+  </main>
+
+  <aside id="right"></aside>
+</div>
+<input type="file" id="f-char" multiple hidden />
+<input type="file" id="f-acc" multiple hidden />
+<input type="file" id="f-anim" multiple hidden />
+<input type="file" id="f-look" accept=".json,application/json" hidden />
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

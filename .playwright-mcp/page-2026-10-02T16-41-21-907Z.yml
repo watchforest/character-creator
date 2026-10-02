@@ -1,0 +1,348 @@
+- generic [ref=f10e2]:
+  - complementary [ref=f10e3]:
+    - generic [ref=f10e4]:
+      - heading "Character Creator" [level=1] [ref=f10e5]
+      - generic [ref=f10e6]: default.glb
+    - navigation [ref=f10e7]:
+      - button "Look" [ref=f10e8] [cursor=pointer]
+      - button "Accessories" [ref=f10e9] [cursor=pointer]
+      - button "Animate" [ref=f10e10] [cursor=pointer]
+      - button "Studio" [ref=f10e11] [cursor=pointer]
+    - generic [ref=f10e13]:
+      - generic [ref=f10e14]:
+        - heading "Colours" [level=2] [ref=f10e15]
+        - generic [ref=f10e16]:
+          - generic [ref=f10e17]:
+            - textbox [ref=f10e18] [cursor=pointer]: "#e7e7e7"
+            - generic "Material · Object_7" [ref=f10e19]
+            - button "↺" [ref=f10e20] [cursor=pointer]
+          - generic [ref=f10e21]:
+            - button "#f2f2f2" [ref=f10e22] [cursor=pointer]
+            - button "#2b2f3a" [ref=f10e23] [cursor=pointer]
+            - button "#c0392b" [ref=f10e24] [cursor=pointer]
+            - button "#e67e22" [ref=f10e25] [cursor=pointer]
+            - button "#f1c40f" [ref=f10e26] [cursor=pointer]
+            - button "#27ae60" [ref=f10e27] [cursor=pointer]
+            - button "#16a085" [ref=f10e28] [cursor=pointer]
+            - button "#2980b9" [ref=f10e29] [cursor=pointer]
+            - button "#8e44ad" [ref=f10e30] [cursor=pointer]
+            - button "#7f8c8d" [ref=f10e31] [cursor=pointer]
+          - group [ref=f10e32]:
+            - generic "Finish" [ref=f10e33] [cursor=pointer]
+        - generic [ref=f10e34]:
+          - generic [ref=f10e35]:
+            - textbox [ref=f10e36] [cursor=pointer]: "#e7e7e7"
+            - generic "Material · Object_8" [ref=f10e37]
+            - button "↺" [ref=f10e38] [cursor=pointer]
+          - generic [ref=f10e39]:
+            - button "#f2f2f2" [ref=f10e40] [cursor=pointer]
+            - button "#2b2f3a" [ref=f10e41] [cursor=pointer]
+            - button "#c0392b" [ref=f10e42] [cursor=pointer]
+            - button "#e67e22" [ref=f10e43] [cursor=pointer]
+            - button "#f1c40f" [ref=f10e44] [cursor=pointer]
+            - button "#27ae60" [ref=f10e45] [cursor=pointer]
+            - button "#16a085" [ref=f10e46] [cursor=pointer]
+            - button "#2980b9" [ref=f10e47] [cursor=pointer]
+            - button "#8e44ad" [ref=f10e48] [cursor=pointer]
+            - button "#7f8c8d" [ref=f10e49] [cursor=pointer]
+          - group [ref=f10e50]:
+            - generic "Finish" [ref=f10e51] [cursor=pointer]
+        - generic [ref=f10e52]:
+          - generic [ref=f10e53]:
+            - textbox [ref=f10e54] [cursor=pointer]: "#e7e7e7"
+            - generic "Material · Object_9" [ref=f10e55]
+            - button "↺" [ref=f10e56] [cursor=pointer]
+          - generic [ref=f10e57]:
+            - button "#f2f2f2" [ref=f10e58] [cursor=pointer]
+            - button "#2b2f3a" [ref=f10e59] [cursor=pointer]
+            - button "#c0392b" [ref=f10e60] [cursor=pointer]
+            - button "#e67e22" [ref=f10e61] [cursor=pointer]
+            - button "#f1c40f" [ref=f10e62] [cursor=pointer]
+            - button "#27ae60" [ref=f10e63] [cursor=pointer]
+            - button "#16a085" [ref=f10e64] [cursor=pointer]
+            - button "#2980b9" [ref=f10e65] [cursor=pointer]
+            - button "#8e44ad" [ref=f10e66] [cursor=pointer]
+            - button "#7f8c8d" [ref=f10e67] [cursor=pointer]
+          - group [ref=f10e68]:
+            - generic "Finish" [ref=f10e69] [cursor=pointer]
+      - generic [ref=f10e70]:
+        - heading "Parts" [level=2] [ref=f10e71]
+        - paragraph [ref=f10e72]: Show or hide meshes of the template (hairstyles, clothes, ...).
+        - list [ref=f10e73]:
+          - listitem [ref=f10e74] [cursor=pointer]:
+            - generic [ref=f10e75]: 👁
+            - generic [ref=f10e76]: Object_7
+          - listitem [ref=f10e77] [cursor=pointer]:
+            - generic [ref=f10e78]: 👁
+            - generic [ref=f10e79]: Object_8
+          - listitem [ref=f10e80] [cursor=pointer]:
+            - generic [ref=f10e81]: 👁
+            - generic [ref=f10e82]: Object_9
+      - generic [ref=f10e83]:
+        - heading "Body" [level=2] [ref=f10e84]
+        - generic [ref=f10e85]:
+          - generic [ref=f10e86]: Height
+          - generic [ref=f10e87]: "1"
+          - slider [ref=f10e88]: "1"
+        - generic [ref=f10e89]:
+          - generic [ref=f10e90]: Head size
+          - generic [ref=f10e91]: "1"
+          - slider [ref=f10e92]: "1"
+        - generic [ref=f10e93]:
+          - generic [ref=f10e94]: Arm size
+          - generic [ref=f10e95]: "1"
+          - slider [ref=f10e96]: "1"
+        - generic [ref=f10e97]:
+          - generic [ref=f10e98]: Hand size
+          - generic [ref=f10e99]: "1"
+          - slider [ref=f10e100]: "1"
+        - generic [ref=f10e101]:
+          - generic [ref=f10e102]: Leg size
+          - generic [ref=f10e103]: "1"
+          - slider [ref=f10e104]: "1"
+        - generic [ref=f10e105]:
+          - generic [ref=f10e106]: Foot size
+          - generic [ref=f10e107]: "1"
+          - slider [ref=f10e108]: "1"
+        - button "Reset proportions" [ref=f10e109] [cursor=pointer]
+        - paragraph [ref=f10e110]: Proportions are saved as bone scales, so exported animations still work.
+      - generic [ref=f10e111]:
+        - heading "Rig" [level=2] [ref=f10e112]
+        - paragraph [ref=f10e113]: 14 bones. Accessories attach to these. Fix any that look wrong; existing accessories keep their bone (change it in the accessory panel).
+        - generic [ref=f10e114] [cursor=pointer]:
+          - checkbox "Show skeleton" [ref=f10e115]
+          - text: Show skeleton
+        - generic [ref=f10e116]:
+          - generic [ref=f10e117]: Character faces
+          - combobox "Character faces" [ref=f10e118] [cursor=pointer]:
+            - option "+Z (glTF default)" [selected]
+            - option "−Z (turned around)"
+        - group [ref=f10e119]:
+          - generic "Bone mapping" [ref=f10e120] [cursor=pointer]
+          - 'option "Auto: head_1" [selected]'
+          - option "GLTF_created_0_rootJoint"
+          - option "head_1"
+          - option "shoulder_right_3"
+          - option "arm_right_2"
+          - option "shoulder_left_5"
+          - option "arm_left_4"
+          - option "spine_7"
+          - option "backbone_6"
+          - option "hip_right_10"
+          - option "thigh_right_9"
+          - option "leg_right_8"
+          - option "hip_left_13"
+          - option "thigh_left_12"
+          - option "leg_left_11"
+          - 'option "Auto: backbone_6" [selected]'
+          - option "GLTF_created_0_rootJoint"
+          - option "head_1"
+          - option "shoulder_right_3"
+          - option "arm_right_2"
+          - option "shoulder_left_5"
+          - option "arm_left_4"
+          - option "spine_7"
+          - option "backbone_6"
+          - option "hip_right_10"
+          - option "thigh_right_9"
+          - option "leg_right_8"
+          - option "hip_left_13"
+          - option "thigh_left_12"
+          - option "leg_left_11"
+          - 'option "Auto: spine_7 (via spine)" [selected]'
+          - option "GLTF_created_0_rootJoint"
+          - option "head_1"
+          - option "shoulder_right_3"
+          - option "arm_right_2"
+          - option "shoulder_left_5"
+          - option "arm_left_4"
+          - option "spine_7"
+          - option "backbone_6"
+          - option "hip_right_10"
+          - option "thigh_right_9"
+          - option "leg_right_8"
+          - option "hip_left_13"
+          - option "thigh_left_12"
+          - option "leg_left_11"
+          - 'option "Auto: arm_left_4" [selected]'
+          - option "GLTF_created_0_rootJoint"
+          - option "head_1"
+          - option "shoulder_right_3"
+          - option "arm_right_2"
+          - option "shoulder_left_5"
+          - option "arm_left_4"
+          - option "spine_7"
+          - option "backbone_6"
+          - option "hip_right_10"
+          - option "thigh_right_9"
+          - option "leg_right_8"
+          - option "hip_left_13"
+          - option "thigh_left_12"
+          - option "leg_left_11"
+          - 'option "Auto: arm_right_2" [selected]'
+          - option "GLTF_created_0_rootJoint"
+          - option "head_1"
+          - option "shoulder_right_3"
+          - option "arm_right_2"
+          - option "shoulder_left_5"
+          - option "arm_left_4"
+          - option "spine_7"
+          - option "backbone_6"
+          - option "hip_right_10"
+          - option "thigh_right_9"
+          - option "leg_right_8"
+          - option "hip_left_13"
+          - option "thigh_left_12"
+          - option "leg_left_11"
+          - 'option "Auto: arm_left_4 (via upperArmL)" [selected]'
+          - option "GLTF_created_0_rootJoint"
+          - option "head_1"
+          - option "shoulder_right_3"
+          - option "arm_right_2"
+          - option "shoulder_left_5"
+          - option "arm_left_4"
+          - option "spine_7"
+          - option "backbone_6"
+          - option "hip_right_10"
+          - option "thigh_right_9"
+          - option "leg_right_8"
+          - option "hip_left_13"
+          - option "thigh_left_12"
+          - option "leg_left_11"
+          - 'option "Auto: arm_right_2 (via upperArmR)" [selected]'
+          - option "GLTF_created_0_rootJoint"
+          - option "head_1"
+          - option "shoulder_right_3"
+          - option "arm_right_2"
+          - option "shoulder_left_5"
+          - option "arm_left_4"
+          - option "spine_7"
+          - option "backbone_6"
+          - option "hip_right_10"
+          - option "thigh_right_9"
+          - option "leg_right_8"
+          - option "hip_left_13"
+          - option "thigh_left_12"
+          - option "leg_left_11"
+          - 'option "Auto: thigh_left_12" [selected]'
+          - option "GLTF_created_0_rootJoint"
+          - option "head_1"
+          - option "shoulder_right_3"
+          - option "arm_right_2"
+          - option "shoulder_left_5"
+          - option "arm_left_4"
+          - option "spine_7"
+          - option "backbone_6"
+          - option "hip_right_10"
+          - option "thigh_right_9"
+          - option "leg_right_8"
+          - option "hip_left_13"
+          - option "thigh_left_12"
+          - option "leg_left_11"
+          - 'option "Auto: thigh_right_9" [selected]'
+          - option "GLTF_created_0_rootJoint"
+          - option "head_1"
+          - option "shoulder_right_3"
+          - option "arm_right_2"
+          - option "shoulder_left_5"
+          - option "arm_left_4"
+          - option "spine_7"
+          - option "backbone_6"
+          - option "hip_right_10"
+          - option "thigh_right_9"
+          - option "leg_right_8"
+          - option "hip_left_13"
+          - option "thigh_left_12"
+          - option "leg_left_11"
+          - 'option "Auto: leg_left_11 (via lowLegL)" [selected]'
+          - option "GLTF_created_0_rootJoint"
+          - option "head_1"
+          - option "shoulder_right_3"
+          - option "arm_right_2"
+          - option "shoulder_left_5"
+          - option "arm_left_4"
+          - option "spine_7"
+          - option "backbone_6"
+          - option "hip_right_10"
+          - option "thigh_right_9"
+          - option "leg_right_8"
+          - option "hip_left_13"
+          - option "thigh_left_12"
+          - option "leg_left_11"
+          - 'option "Auto: leg_right_8 (via lowLegR)" [selected]'
+          - option "GLTF_created_0_rootJoint"
+          - option "head_1"
+          - option "shoulder_right_3"
+          - option "arm_right_2"
+          - option "shoulder_left_5"
+          - option "arm_left_4"
+          - option "spine_7"
+          - option "backbone_6"
+          - option "hip_right_10"
+          - option "thigh_right_9"
+          - option "leg_right_8"
+          - option "hip_left_13"
+          - option "thigh_left_12"
+          - option "leg_left_11"
+    - paragraph [ref=f10e121]: Your files never leave your browser. Export the result and send the .glb to <contact>.
+  - main [ref=f10e122]:
+    - generic [ref=f10e124]:
+      - button "Undo" [disabled] [ref=f10e125]
+      - button "Redo" [disabled] [ref=f10e126]
+      - button "🎲 Randomize" [ref=f10e128] [cursor=pointer]
+      - button "Reset" [ref=f10e129] [cursor=pointer]
+      - button "Full" [ref=f10e131] [cursor=pointer]
+      - button "Face" [ref=f10e132] [cursor=pointer]
+      - button "Save look" [ref=f10e134] [cursor=pointer]
+      - button "Load look" [ref=f10e135] [cursor=pointer]
+    - generic [ref=f10e136]:
+      - button "❚❚" [ref=f10e137] [cursor=pointer]
+      - button "■" [ref=f10e138] [cursor=pointer]
+      - combobox "Animation" [ref=f10e139] [cursor=pointer]:
+        - option "— rest pose —"
+        - option "idle" [selected]
+        - option "walking"
+        - option "Dancing-1"
+        - option "Dancing-2"
+        - option "Dancing-3"
+        - option "Resting-1"
+        - option "Sitting-1"
+        - option "Stand-To-Sit"
+        - option "Walking-3"
+        - option "Walking"
+        - option "Waving-both-arms"
+        - option "Waving"
+      - slider [ref=f10e140]: "0.013"
+      - generic [ref=f10e141]: 0.02 / 1.67
+      - generic "Playback speed" [ref=f10e142] [cursor=pointer]:
+        - text: ×
+        - combobox "×" [ref=f10e143]:
+          - option "0.25"
+          - option "0.5"
+          - option "1" [selected]
+          - option "1.5"
+          - option "2"
+      - generic [ref=f10e144] [cursor=pointer]:
+        - checkbox "Loop" [checked] [ref=f10e145]
+        - text: Loop
+    - generic [ref=f10e146]: "No bone named for Hips, Hand L, Hand R, Foot L, Foot R: using nearby bones instead. Check the Rig section (Look tab)."
+  - complementary [ref=f10e148]:
+    - generic [ref=f10e149]:
+      - heading "Accessory" [level=2] [ref=f10e150]
+      - paragraph [ref=f10e151]: Select an equipped accessory (in the list or by clicking it in the viewport) to fine-tune its placement.
+    - generic [ref=f10e152]:
+      - heading "Export" [level=2] [ref=f10e153]
+      - generic [ref=f10e154]:
+        - generic [ref=f10e155]: Filename
+        - textbox "Filename" [ref=f10e156]: character.glb
+      - generic [ref=f10e157] [cursor=pointer]:
+        - checkbox "Include animations (12 of 12)" [checked] [ref=f10e158]
+        - text: Include animations (12 of 12)
+      - paragraph [ref=f10e159]: "Skeleton kept: 14 bones, 3 skinned meshes, 8,845 triangles. Simplified to about 10,000 triangles on export."
+      - button "Export GLB" [ref=f10e160] [cursor=pointer]
+    - generic [ref=f10e161]:
+      - heading "Help" [level=2] [ref=f10e162]
+      - list [ref=f10e163]:
+        - listitem [ref=f10e164]: W E R move / rotate / scale the selected accessory; Del removes, Ctrl/⌘+D duplicates, Ctrl/⌘+Z undoes, Space plays/pauses.
+        - listitem [ref=f10e165]: Accessories are attached to bones, so they follow the animation. They are exported as children of those bones.
+        - listitem [ref=f10e166]: The export keeps the full skeleton and skinning, in the rest pose, with the ticked animations.

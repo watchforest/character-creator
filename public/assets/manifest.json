@@ -1,0 +1,4 @@
+{
+  "_help": "Accessory catalog. Add one object per item to \"items\" and put the .glb next to this file. See README.md.",
+  "items": []
+}

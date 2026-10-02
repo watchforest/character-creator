@@ -1,0 +1,21 @@
+{
+  "name": "character-creator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:prod": "vite --mode production",
+    "build": "vite build",
+    "build:dev": "vite build --mode development",
+    "preview": "vite preview",
+    "placeholder": "node scripts/make-placeholder.mjs"
+  },
+  "dependencies": {
+    "meshoptimizer": "^1.3.0",
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}

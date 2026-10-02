@@ -1,0 +1,31 @@
+- generic [ref=f6e2]:
+  - complementary [ref=f6e3]:
+    - heading "Character Creator" [level=1] [ref=f6e5]
+    - navigation [ref=f6e6]:
+      - button "Look" [ref=f6e7] [cursor=pointer]
+      - button "Accessories" [ref=f6e8] [cursor=pointer]
+      - button "Animate" [ref=f6e9] [cursor=pointer]
+      - button "Studio" [ref=f6e10] [cursor=pointer]
+    - paragraph [ref=f6e12]: Load a character to start.
+    - paragraph [ref=f6e13]: Your files never leave your browser. Export the result and send the .glb to <contact>.
+  - main [ref=f6e14]:
+    - generic [ref=f6e16]:
+      - button "Undo" [disabled] [ref=f6e17]
+      - button "Redo" [disabled] [ref=f6e18]
+      - button "🎲 Randomize" [ref=f6e20] [cursor=pointer]
+      - button "Reset" [ref=f6e21] [cursor=pointer]
+      - button "Full" [ref=f6e23] [cursor=pointer]
+      - button "Face" [ref=f6e24] [cursor=pointer]
+      - button "Save look" [ref=f6e26] [cursor=pointer]
+      - button "Load look" [ref=f6e27] [cursor=pointer]
+  - complementary [ref=f6e28]:
+    - generic [ref=f6e29]:
+      - heading "Accessory" [level=2] [ref=f6e30]
+      - paragraph [ref=f6e31]: Load a character first.
+    - text: "null"
+    - generic [ref=f6e32]:
+      - heading "Help" [level=2] [ref=f6e33]
+      - list [ref=f6e34]:
+        - listitem [ref=f6e35]: W E R move / rotate / scale the selected accessory; Del removes, Ctrl/⌘+D duplicates, Ctrl/⌘+Z undoes, Space plays/pauses.
+        - listitem [ref=f6e36]: Accessories are attached to bones, so they follow the animation. They are exported as children of those bones.
+        - listitem [ref=f6e37]: The export keeps the full skeleton and skinning, in the rest pose, with the ticked animations.
