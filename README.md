@@ -40,7 +40,7 @@ Requirements and behaviour:
 - **Parts:** every mesh gets an on/off toggle, so hairstyles, clothing variants, etc. can ship in the template as separate meshes.
 - **Colours:** a flat (untextured) material shared by several meshes is split per mesh, so each part can be coloured separately. Textured materials stay shared.
 - **Proportions:** sliders scale bones (head, arms, hands, legs, feet) plus overall height. They are saved as bone scales, so animations keep working. Sliders only show for bones that are found.
-- **Rig:** bone names are parsed loosely into part + side + number, so Mixamo (`mixamorig:LeftHand`), Blender (`hand.L`, `upper_arm.R`) and numbered names (`head_1`, `arm_right_2`) all work. A rig without hand/foot bones falls back to the forearm/arm or lower-leg bones. The **Look → Rig** section shows what was matched, lets you pick a different bone for any role, has a *Show skeleton* toggle and a *Character faces* (+Z / −Z) setting for models without an obvious front. Rig fixes survive Reset and are saved in looks. Synonyms live in `BONE_ROLES` in `src/config.js`.
+- **Rig:** bone names are parsed loosely into part + side + number, so Mixamo (`mixamorig:LeftHand`), Blender (`hand.L`, `upper_arm.R`) and numbered names (`head_1`, `arm_right_2`) all work. A rig without hand/foot bones falls back to the forearm/arm or lower-leg bones. The **Look → Rig** section shows what was matched, lets you pick a different bone for any role, has a *Show skeleton* toggle and a *Character faces* (+Z / −Z) setting for models without an obvious front. Rig fixes are saved in looks. Synonyms live in `BONE_ROLES` in `src/config.js`.
 
 ## Add accessories
 

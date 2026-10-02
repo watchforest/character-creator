@@ -752,16 +752,26 @@ window.addEventListener('drop', async (e) => {
 
 $('#b-undo').addEventListener('click', () => history.undo());
 $('#b-redo').addEventListener('click', () => history.redo());
+/** True when the look differs from the untouched template (rig fixes and facing describe the model, not the look). */
+const hasChanges = () => {
+  const base = emptyLook();
+  return ['materials', 'hiddenParts', 'body', 'accessories'].some((k) => JSON.stringify(look[k]) !== JSON.stringify(base[k]));
+};
+
 $('#b-reset').addEventListener('click', () => {
   if (!character) return;
+  if (!hasChanges()) { toast('There are no changes to discard.'); return; }
+  if (!confirm('Discard all your changes and go back to the original character? You can undo it afterwards.')) return;
   selectedUid = null;
   const fresh = emptyLook();
   fresh.roles = look.roles; // rig fixes describe the model, not the look
   fresh.facing = look.facing;
   setLook(fresh);
 });
+
 $('#b-random').addEventListener('click', () => {
   if (!character) return;
+  if (hasChanges() && !confirm('Randomize replaces the changes you have made to the character. You can undo it afterwards. Continue?')) return;
   const next = randomizeLook(look, character);
   const pool = catalog.items.filter((i) => !i.custom);
   next.accessories = next.accessories.filter((a) => a.item.startsWith('custom:'));
@@ -773,7 +783,7 @@ $('#b-random').addEventListener('click', () => {
   selectedUid = null;
   setLook(next);
 });
-$('#b-full').addEventListener('click', () => character && viewer.frameBox(character.currentBox()));
+$('#b-zoom').addEventListener('click', () => character && viewer.frameBox(character.currentBox()));
 $('#b-save').addEventListener('click', () => download(new Blob([JSON.stringify(persistable(), null, 2)], { type: 'application/json' }), 'my-look.json'));
 $('#b-load').addEventListener('click', () => $('#f-look').click());
 $('#e-choose').addEventListener('click', () => $('#f-char').click());
