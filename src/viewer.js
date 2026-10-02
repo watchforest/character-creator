@@ -34,6 +34,7 @@ export function createViewer(canvas, container) {
   camera.position.set(1.8, 1.4, 3.6);
   const orbit = new OrbitControls(camera, canvas);
   orbit.enableDamping = true;
+  orbit.zoomToCursor = true; // the wheel / pinch zooms towards the point under the cursor
   orbit.target.set(0, 0.9, 0);
   orbit.autoRotateSpeed = 2;
   orbit.update();

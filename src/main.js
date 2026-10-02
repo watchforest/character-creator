@@ -774,13 +774,6 @@ $('#b-random').addEventListener('click', () => {
   setLook(next);
 });
 $('#b-full').addEventListener('click', () => character && viewer.frameBox(character.currentBox()));
-$('#b-face').addEventListener('click', () => {
-  const head = character?.bone('head');
-  if (!head) return;
-  const p = head.getWorldPosition(new THREE.Vector3());
-  p.y += character.height * 0.05;
-  viewer.focus(p, character.height * 0.55, new THREE.Vector3(0.25, 0.05, 1));
-});
 $('#b-save').addEventListener('click', () => download(new Blob([JSON.stringify(persistable(), null, 2)], { type: 'application/json' }), 'my-look.json'));
 $('#b-load').addEventListener('click', () => $('#f-look').click());
 $('#e-choose').addEventListener('click', () => $('#f-char').click());
